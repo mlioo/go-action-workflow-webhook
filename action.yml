@@ -1,0 +1,21 @@
+name: GitHub action external webhook
+description: Creates an external webhook from a github action
+inputs:
+  webhook-url:
+    description: webhook url
+    required: true
+  webhook-secret:
+    description: webhook secret used for computing hmac of the request
+    required: true
+  extras:
+    description: extra values to add to the request as a json string
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.webhook-url }}
+    - ${{ inputs.webhook-secret }}
+author: mlioo
+branding:
+  icon: truck
+  color: yellow
