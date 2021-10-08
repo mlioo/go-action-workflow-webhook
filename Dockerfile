@@ -2,7 +2,7 @@ FROM golang:alpine
 
 WORKDIR /build
 
-COPY go.mod go.sum ./
+COPY go.mod ./
 COPY *.go ./
 COPY entrypoint.sh /
 
